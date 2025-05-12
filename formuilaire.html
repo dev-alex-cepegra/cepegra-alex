@@ -32,13 +32,35 @@
 
   <script defer>
     const $nb1 = document.querySelector("#nb1").value;
-
+    //Selectionner l'élement parents pour selectionner les elements enfants par la suite est plus performant
+    /*<form action="" id="calculette">
+      ...
+    </form>*/
     document.querySelector("#btn").addEventListener("click", event => {
       event.preventDefault();
       var $nb1 = document.querySelector("#nb1").value;
       const $nb2 = document.querySelector("#nb2").value;
 
       console.log(parseInt($nb1) + parseInt($nb2));
+    })
+  </script>
+
+  <hr>
+
+  <form action="" id="calculette2">
+    <input type="number" id="nb3" name="nb3">
+    <label for="nb2"></label>
+    <input type="number" id="nb4" name="nb4">
+    <button type="submit">Calculer avec formData</button>
+  </form>
+
+  <script defer>
+    document.addEventListener("submit", event => {
+      event.preventDefault();
+      const $calculette2 = new FormData(calculette2);
+      const nb3 = $calculette2.get("nb3");
+      
+      console.log(nb3);
     })
   </script>
 </body>
