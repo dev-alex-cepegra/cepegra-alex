@@ -8,10 +8,38 @@
 </head>
 <body>
   <h1 id="title1">Mon bô titre</h1>
+  <p><a href="" id="switch-title">change titre</a></p>
   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat consequuntur tempore blanditiis molestias dolore dolor, omnis eligendi facere fuga odio magnam ipsa vero deleniti quae!</p>
   <script defer>
+    const title1 = "Mon bô titre";
+    const title2 = "New texte";
     const $myTtitle1 = document.getElementById('title1'); // ou documet.querySelector("#title1")
-    $myTtitle1.innerText = "New texte";
+    const $switchTitle = document.getElementById('switch-title').addEventListener("click", event => {
+      event.preventDefault();
+      $myTtitle1.innerText != title1 ? $myTtitle1.innerText = title1 : $myTtitle1.innerText = title2
+    });
+  </script>
+
+  <hr>
+
+  <form action="">
+    <label for="nb1"></label>
+    <input type="number" id="nb1">
+    <label for="nb2"></label>
+    <input type="number" id="nb2">
+    <button id="btn">Calculer</button>
+  </form>
+
+  <script>
+    const $nb1 = document.querySelector("#nb1").value;
+
+    document.querySelector("#btn").addEventListener("click", event => {
+      event.preventDefault();
+      var $nb1 = document.querySelector("#nb1").value;
+      const $nb2 = document.querySelector("#nb2").value;
+
+      console.log(parseInt($nb1) + parseInt($nb2));
+    })
   </script>
 </body>
 </html>
